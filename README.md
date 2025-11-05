@@ -153,9 +153,9 @@ O método proposto — combinando **palavras-chave temáticas** e **VADER sentim
 
 ## 🔗 Links
 
-📘 [Notebook no Google Colab](https://colab.research.google.com/drive/SEU_LINK_AQUI)  
+📘 [Notebook no Google Colab]([https://colab.research.google.com/drive/SEU_LINK_AQUI](https://colab.research.google.com/drive/19ghqgaJOrO7jR74WBzTw3sE_6FPe_emz?usp=sharing))  
 💾 [Dataset — Kaggle (Steam Reviews)](https://www.kaggle.com/datasets/andrewmvd/steam-reviews)  
-🌐 [Repositório no GitHub Pages](https://seuusuario.github.io/steam-reviews-nlp)
+🌐 [Repositório no GitHub Pages](https://Vini-Urias.github.io/steam-reviews-nlp)
 
 ---
 
