@@ -35,6 +35,7 @@ A proposta busca transformar milhões de avaliações textuais em **insights pr�
 5. **Interpretação:** análise visual e qualitativa das categorias e exemplos.
 
 ---
+## 📈 Resultados Quantitativos
 
 ### 🔠 Ocorrências de Palavras-Chave (Positivas vs Negativas)
 ![Ocorrências de Palavras-Chave](ocorr%C3%AAncia%20de%20palavras.png)
@@ -44,23 +45,8 @@ A proposta busca transformar milhões de avaliações textuais em **insights pr�
 > enquanto *performance* concentra o maior volume de reclamações.
 
 ---
-## 📈 Resultados Quantitativos
 
-### 💬 Tom Médio (VADER compound) por Categoria
-![Tom Médio por Categoria](tom%20m%C3%A9dio%20por%20categoria.png)
 
-> O tom médio mostra uma clara tendência positiva nas categorias *general* e *narrative*,  
-> com queda significativa em *performance* e *nostalgia*.
-
----
-
-### 📊 Tom + Review Score médio por Categoria
-![Tom + Review Score médio por Categoria](Tom%20e%20Review%20Score%20m%C3%A9dio%20por%20categoria.png)
-
-> As categorias *general* e *narrative* apresentaram os maiores valores médios,  
-> enquanto *performance* concentrou os menores escores de sentimento e recomendação.
-
----
 
 ## 📊 Análise de Palavras-Chave por Sentimento
 
@@ -115,7 +101,21 @@ A proposta busca transformar milhões de avaliações textuais em **insights pr�
 **Negativas:** weird (4), xd (3), sarcastic (1)
 
 ---
+### 💬 Tom Médio (VADER compound) por Categoria
+![Tom Médio por Categoria](tom%20m%C3%A9dio%20por%20categoria.png)
 
+> O tom médio mostra uma clara tendência positiva nas categorias *general* e *narrative*,  
+> com queda significativa em *performance* e *nostalgia*.
+
+---
+
+### 📊 Tom + Review Score médio por Categoria
+![Tom + Review Score médio por Categoria](Tom%20e%20Review%20Score%20m%C3%A9dio%20por%20categoria.png)
+
+> As categorias *general* e *narrative* apresentaram os maiores valores médios,  
+> enquanto *performance* concentrou os menores escores de sentimento e recomendação.
+
+---
 ## 🧩 Exemplos Qualitativos
 
 ### 🎮 Altamente Positivo (Elogios Consistentes)
