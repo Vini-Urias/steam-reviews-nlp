@@ -36,15 +36,15 @@ A proposta busca transformar milhões de avaliações textuais em **insights pr�
 
 ---
 
-## 📈 Resultados Quantitativos
+### 🔠 Ocorrências de Palavras-Chave (Positivas vs Negativas)
+![Ocorrências de Palavras-Chave](ocorr%C3%AAncia%20de%20palavras.png)
 
-### 📊 Tom + Review Score médio por Categoria
-![Tom + Review Score médio por Categoria](Tom%20e%20Review%20Score%20m%C3%A9dio%20por%20categoria.png)
-
-> As categorias *general* e *narrative* apresentaram os maiores valores médios,  
-> enquanto *performance* concentrou os menores escores de sentimento e recomendação.
+> A diferença entre menções positivas e negativas evidencia o impacto emocional das críticas —  
+> *general*, *gameplay* e *narrative* são as mais mencionadas positivamente,  
+> enquanto *performance* concentra o maior volume de reclamações.
 
 ---
+## 📈 Resultados Quantitativos
 
 ### 💬 Tom Médio (VADER compound) por Categoria
 ![Tom Médio por Categoria](tom%20m%C3%A9dio%20por%20categoria.png)
@@ -54,12 +54,11 @@ A proposta busca transformar milhões de avaliações textuais em **insights pr�
 
 ---
 
-### 🔠 Ocorrências de Palavras-Chave (Positivas vs Negativas)
-![Ocorrências de Palavras-Chave](ocorr%C3%AAncia%20de%20palavras.png)
+### 📊 Tom + Review Score médio por Categoria
+![Tom + Review Score médio por Categoria](Tom%20e%20Review%20Score%20m%C3%A9dio%20por%20categoria.png)
 
-> A diferença entre menções positivas e negativas evidencia o impacto emocional das críticas —  
-> *general*, *gameplay* e *narrative* são as mais mencionadas positivamente,  
-> enquanto *performance* concentra o maior volume de reclamações.
+> As categorias *general* e *narrative* apresentaram os maiores valores médios,  
+> enquanto *performance* concentrou os menores escores de sentimento e recomendação.
 
 ---
 
