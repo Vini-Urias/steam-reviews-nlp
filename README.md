@@ -6,7 +6,11 @@ Classificação temática e análise de sentimento de avaliações da Steam util
 
 **Projeto do 2º Semestre - Ciência de Dados (ECM514)**  
 Instituto Mauá de Tecnologia • 2025  
-Autores: Larissa Navarro Pizarro, Lucas Miguel de Matos Negri, Matheus Igino Machado, Vinicius Urias da Cruz  
+Autores: 
+Larissa Navarro Pizarro RA:19.02028-7
+Lucas Miguel de Matos Negri RA: 19.00386-2
+Matheus Igino Machado RA: 20.01629-8
+Vinicius Urias da Cruz RA: 20.00601-2
 
 ---
 
