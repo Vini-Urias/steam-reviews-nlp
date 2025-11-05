@@ -53,7 +53,7 @@ O objetivo é identificar os principais aspectos citados pelos jogadores — com
 
 🔗 Links do Projeto
 
-Notebook no Google Colab: [Aqui]([https://link-que-será-aberto](https://colab.research.google.com/drive/19ghqgaJOrO7jR74WBzTw3sE_6FPe_emz?usp=sharing))
+Notebook no Google Colab: [Aqui](https://colab.research.google.com/drive/19ghqgaJOrO7jR74WBzTw3sE_6FPe_emz?usp=sharing)
 
 Base de Dados (Kaggle): [Aqui](https://www.kaggle.com/datasets/andrewmvd/steam-reviews/data)
 
