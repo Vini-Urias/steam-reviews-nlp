@@ -1,171 +1,110 @@
 # 🎮 Steam Reviews NLP Analysis  
-> Análise de Sentimentos e Foco Temático em Avaliações da Steam  
+> Análise de Sentimentos e Coerência Texto × Nota em Avaliações da Steam  
 > Projeto de Ciência de Dados — ECM514 | Instituto Mauá de Tecnologia (2025)
 
 ---
 
 ## 🧠 Introdução
 
-O projeto analisa **avaliações de jogos da Steam** aplicando técnicas de **Processamento de Linguagem Natural (NLP)**, com o objetivo de identificar:
-- O **foco da crítica** (ex.: performance, gameplay, narrativa, conteúdo, comunidade);
-- O **tom emocional** das reviews por meio do modelo **VADER**;
-- E a **coerência entre o texto e o review_score** da própria Steam.
+Este projeto analisa **avaliações reais de jogos da Steam**, utilizando **técnicas de Processamento de Linguagem Natural (NLP)** para compreender:
 
-A proposta busca transformar milhões de avaliações textuais em **insights práticos** para desenvolvedores e plataformas entenderem o que mais agrada ou irrita os jogadores.
+- O **foco temático** de cada review (ex.: *gameplay*, *narrative*, *performance*, *community*, etc.);
+- O **tom emocional** (positividade/negatividade) através de *sentiment analysis* com o modelo **VADER**;
+- A **coerência entre o sentimento do texto e o review_score** atribuído pelo jogador;
+- E a **concordância média por jogo**, comparando *tone_score × review_score*.
+
+A partir de dados **crus coletados diretamente via API pública da Steam**, o estudo buscou gerar **insights quantitativos e qualitativos** sobre a percepção dos jogadores em diferentes aspectos dos jogos.
 
 ---
 
 ## 💾 Base de Dados
 
-| Fonte | Kaggle — Steam Reviews Dataset |
-|--------|--------------------------------|
-| Tamanho | +6 milhões de avaliações |
-| Idioma | Inglês |
-| Atributos usados | `review`, `review_score`, `review_votes`, `app_name` |
-| Link | [Steam Reviews Dataset — Andrew Mvd](https://www.kaggle.com/datasets/andrewmvd/steam-reviews) |
+| Fonte | Steam Web API |
+|--------|----------------|
+| Tamanho | 18.548 avaliações |
+| Idioma | Inglês (filtrado) |
+| Estrutura | `game`, `review`, `review_score`, `tone_score`, `review_focus` |
+| Acesso | [Repositório GitHub — Steam Reviews NLP](https://github.com/Vini-Urias/steam-reviews-nlp) |
+
+> Todos os dados foram coletados via script automatizado da API da Steam, garantindo que o projeto utilize **informações brutas e não tratadas previamente**.
 
 ---
 
 ## 🔬 Metodologia
 
-1. **Pré-processamento textual:** limpeza, normalização, tokenização e remoção de *stopwords*;  
-2. **Classificação temática:** categorização por palavras-chave (ex.: “bug”, “fps”, “story”, “music”);  
-3. **Análise de sentimento (VADER):** cálculo de `tone_score` (–1 a +1) e normalização de `review_score`;  
-4. **Integração:** criação do índice `combined_sentiment` para medir coerência texto × nota;  
-5. **Interpretação:** análise visual e qualitativa das categorias e exemplos.
+1. **Coleta de dados crus** via API pública da Steam, com filtro por idioma (inglês);
+2. **Pré-processamento textual:** remoção de stopwords, tokenização e normalização de texto;
+3. **Classificação temática** por palavras-chave (ex.: *story*, *fps*, *team*, *money*, etc.);
+4. **Análise de sentimento (VADER):** cálculo do `tone_score` (de –1 a +1);
+5. **Normalização do review_score** (1 = positivo, 0 = negativo);
+6. **Integração das métricas:** criação de índices combinados de coerência entre texto × nota;
+7. **Visualização interativa:** dashboard em Streamlit para exploração das métricas de cada jogo.
 
 ---
+
 ## 📈 Resultados Quantitativos
 
 ### 🔠 Ocorrências de Palavras-Chave (Positivas vs Negativas)
-![Ocorrências de Palavras-Chave](ocorr%C3%AAncia%20de%20palavras.png)
+![Ocorrências de Palavras-Chave](ocorrência%20de%20palavras.png)
 
-> A diferença entre menções positivas e negativas evidencia o impacto emocional das críticas —  
-> *general*, *gameplay* e *narrative* são as mais mencionadas positivamente,  
-> enquanto *performance* concentra o maior volume de reclamações.
+> As categorias *narrative*, *gameplay* e *general* concentram a maior parte das menções positivas,  
+> enquanto *performance* e *community* exibem o maior volume de críticas negativas, relacionadas a falhas técnicas e comportamento tóxico.
 
 ---
-
-
 
 ## 📊 Análise de Palavras-Chave por Sentimento
 
-✅ **Reviews positivas:** 60,286  ❌ **Negativas:** 12,707  
+✅ **Reviews positivas:** 14.332  ❌ **Negativas:** 4.216  
 
 ---
 
-### 🎮 NARRATIVE (8,571 reviews)
-**Palavras positivas:** story (4806), characters (2338), world (1659), feel (1533), music (1318)  
-**Palavras negativas:** story (610), characters (354), plot (107), art (97)
+### 🎮 GENERAL (5.053 reviews)
+**Positivas:** good (1566), fun (962), love (953), great (891), recommend (664), amazing (561)  
+**Negativas:** good (257), bad (207), fun (189), recommend (144), love (130), hate (99)
 
 ---
 
-### 🎮 COMMUNITY (3,069 reviews)
-**Positivas:** friends (689), multiplayer (456), community (249), team (233)  
-**Negativas:** servers (195), online (173), connection (51)
+### 🎮 NARRATIVE (2.160 reviews)
+**Positivas:** story (1258), world (978), characters (516), feel (496), art (236)  
+**Negativas:** story (59), world (55), feel (51), characters (49)
 
 ---
 
-### 🎮 GENERAL (20,418 reviews)
-**Positivas:** good (6849), great (6249), fun (4924), love (3588)  
-**Negativas:** bad (757), boring (255), terrible (246)
+### 🎮 CONTENT (2.716 reviews)
+**Positivas:** time (854), hours (567), worth (361), long (321), money (253)  
+**Negativas:** time (508), hours (309), money (288), content (279), update (146)
 
 ---
 
-### 🎮 GAMEPLAY (24,330 reviews)
-**Positivas:** fun (8629), gameplay (3681), combat (2262), easy (2053)  
-**Negativas:** boring (738), controls (677), enemy (386)
+### 🎮 GAMEPLAY (5.731 reviews)
+**Positivas:** fun (1910), gameplay (523), hard (506), combat (322), boss (292)  
+**Negativas:** fun (385), gameplay (169), hard (133), boring (113)
 
 ---
 
-### 🎮 CONTENT (10,446 reviews)
-**Positivas:** time (3501), worth (2402), money (1285), dlc (1032)  
-**Negativas:** time (1013), money (848), dlc (499), price (292)
+### 🎮 COMMUNITY (1.506 reviews)
+**Positivas:** friends (179), community (139), team (76), online (64)  
+**Negativas:** servers (126), toxic (124), team (83), matchmaking (56)
 
 ---
 
-### 🎮 PERFORMANCE (5,623 reviews)
-**Positivas:** fps (769), graphics (693), fix (371), bug (163)  
-**Negativas:** fix (490), crash (165), broken (198), patch (182)
+### 🎮 PERFORMANCE (1.240 reviews)
+**Positivas:** fps (83), graphics (79), fix (57), bug (37)  
+**Negativas:** fix (168), fps (54), crash (37), error (37), broken (41)
 
 ---
 
-### 🎮 NOSTALGIA (359 reviews)
-**Positivas:** classic (105), childhood (50), remember (47)  
-**Negativas:** past (12), nostalgia (5)
+### 🎮 HUMOR (43 reviews)
+**Positivas:** xd (9), haha (7), weird (4), funny (2)  
+**Negativas:** lmao (2), weird (1)
 
 ---
 
-### 🎮 HUMOR (177 reviews)
-**Positivas:** xd (49), funny (11), meme (9), haha (4)  
-**Negativas:** weird (4), xd (3), sarcastic (1)
-
----
-### 💬 Tom Médio (VADER compound) por Categoria
-![Tom Médio por Categoria](tom%20m%C3%A9dio%20por%20categoria.png)
-
-> O tom médio mostra uma clara tendência positiva nas categorias *general* e *narrative*,  
-> com queda significativa em *performance* e *nostalgia*.
+### 🎮 NOSTALGIA (99 reviews)
+**Positivas:** classic (29), childhood (9), remember (9), nostalgic (3)  
+**Negativas:** since (12), remember (4), nostalgia (1)
 
 ---
 
-### 📊 Tom + Review Score médio por Categoria
-![Tom + Review Score médio por Categoria](Tom%20e%20Review%20Score%20m%C3%A9dio%20por%20categoria.png)
-
-> As categorias *general* e *narrative* apresentaram os maiores valores médios,  
-> enquanto *performance* concentrou os menores escores de sentimento e recomendação.
-
----
-## 🧩 Exemplos Qualitativos
-
-### 🎮 Altamente Positivo (Elogios Consistentes)
-- **Dota 2:** comunidade engajada, mas tóxica — review negativa coerente.  
-- **Cities: Skylines:** elogiado pela comunidade ativa e suporte de mods.  
-- **Fallout: New Vegas:** bem avaliado, mas com críticas a problemas técnicos.
-
----
-
-### 🎮 Moderado (Mistura de Elogios e Críticas)
-- **Five Nights at Freddy’s:** divertido, porém curto.  
-- **Space Hulk: Deathwing:** elogia imersão e ambientação, mas pede otimização.  
-- **Rainbow Six Siege:** boa experiência, custo-benefício destacado.
-
----
-
-### 🎮 Negativo / Inconsistente (Críticas Prevalecem)
-- **OPUS: The Day We Found Earth:** bom tom emocional, mas jogabilidade fraca.  
-- **Ace of Words:** puzzles interessantes, porém bugados.  
-- **Emily Wants To Play:** experiência negativa com erros e sustos excessivos.
-
----
-
-## 🧭 Conclusão
-
-A análise mostrou que:
-- As **categorias “Narrative” e “Gameplay”** geram maior engajamento emocional e sentimento positivo;  
-- **“Performance”** concentra reclamações relacionadas a falhas técnicas;  
-- Há **inconsistências entre sentimento textual e review_score**, revelando que alguns jogadores recomendam o jogo apesar das críticas.
-
-O método proposto — combinando **palavras-chave temáticas** e **VADER sentiment analysis** — demonstrou ser eficaz para gerar **insights automáticos sobre percepção de jogos** na Steam.
-
----
-
-## 🔗 Links
-
-📘 [Notebook no Google Colab](https://colab.research.google.com/drive/19ghqgaJOrO7jR74WBzTw3sE_6FPe_emz?usp=sharing)  
-💾 [Dataset — Kaggle (Steam Reviews)](https://www.kaggle.com/datasets/andrewmvd/steam-reviews)  
-🌐 [Datafólio](https://vini-urias.github.io/steam-reviews-nlp/)
-
----
-
-## 👥 Equipe
-
-- **Larissa Navarro Pizarro** — RA: 19.02028-7  
-- **Lucas Miguel de Matos Negri** — RA: 19.00386-2  
-- **Matheus Igino Machado** — RA: 20.01629-8  
-- **Vinicius Urias da Cruz** — RA: 20.00601-2  
-
----
-
-> Projeto desenvolvido para a disciplina **ECM514 — Ciência de Dados**  
-> Instituto Mauá de Tecnologia — 2025
+## 📊 Tom Médio (VADER compound) por Categoria
+![Tom Médio por Categoria](tom%20médio%20por%20ca)
