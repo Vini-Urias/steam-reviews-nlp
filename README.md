@@ -107,4 +107,78 @@ A partir de dados **crus coletados diretamente via API pública da Steam**, o es
 ---
 
 ## 📊 Tom Médio (VADER compound) por Categoria
-![Tom Médio por Categoria](tom%20médio%20por%20ca)
+![Tom Médio por Categoria](tom%20médio%20por%20categoria.png)
+
+> O tom médio é **mais alto em “narrative” e “general”**, demonstrando envolvimento emocional positivo.  
+> Já *performance* e *community* permanecem nas posições mais baixas, indicando frustração técnica e social.
+
+---
+
+## 📉 Tom + Review Score médio por Categoria
+![Tom + Review Score médio por Categoria](Tom%20e%20Review%20Score%20médio%20por%20categoria.png)
+
+> A correlação entre sentimento e nota mostra **alta coerência em “narrative” e “general”**,  
+> e baixa coerência em *performance* e *community*, sugerindo que jogadores criticam fortemente esses aspectos mesmo em jogos bem avaliados.
+
+---
+
+## 🧩 Exemplos Qualitativos
+
+### 🎮 POSITIVO
+- **Dota 2:** exemplo de alta coerência entre sentimento e nota — elogios consistentes.  
+- **The Witcher 3:** destaca narrativa e ambientação, confirmando tom fortemente positivo.  
+- **Dead by Daylight:** demonstra ironia e tom misto apesar de nota positiva.
+
+---
+
+### 🎮 NEUTRO
+- **Phasmophobia:** review com tom misto (elogio técnico, crítica funcional).  
+- **Rainbow Six Siege:** divergência de sentimento e score.  
+- **Dead by Daylight:** review neutra, crítica moderada.
+
+---
+
+### 🎮 NEGATIVO
+- **Destiny 2:** exemplo de reviews negativas consistentes, com forte desalinhamento entre texto e nota.  
+- **Dead by Daylight:** críticas intensas sobre gameplay e bugs.  
+- **Destiny 2 (múltiplas ocorrências):** predominância de frustração e cansaço da comunidade.
+
+---
+
+## 🧭 Conclusão
+
+A análise dos dados **crus** coletados diretamente da Steam mostrou que:
+
+- **“Narrative” e “Gameplay”** concentram as avaliações mais positivas e coerentes;  
+- **“Performance” e “Community”** permanecem como as categorias mais críticas, associadas a problemas técnicos e sociais;  
+- A **coerência entre review_score e tone_score** varia fortemente entre os jogos, indicando que alguns usuários expressam emoções negativas mesmo em avaliações positivas;  
+- O dashboard **Streamlit interativo** permite explorar essas relações por jogo, revelando padrões complexos de percepção entre jogadores e gêneros.
+
+---
+
+## 🧭 Dashboard Interativo (Streamlit)
+
+O projeto inclui um **app interativo em Streamlit**, que permite visualizar:
+- Jogos com **maior e menor concordância** entre `review_score` × `tone_score`;
+- **Notas médias e tom médio** por jogo;
+- **Seleção interativa** de títulos para exibir métricas individuais.
+
+📊 [Acesse o app localmente via Streamlit](http://localhost:8501)  
+🌐 [Ou via ngrok (Colab)](https://colab.research.google.com/drive/19ghqgaJOrO7jR74WBzTw3sE_6FPe_emz)
+
+---
+
+## 👥 Equipe
+
+- **Larissa Navarro Pizarro** — RA: 19.02028-7  
+- **Lucas Miguel de Matos Negri** — RA: 19.00386-2  
+- **Matheus Igino Machado** — RA: 20.01629-8  
+- **Vinicius Urias da Cruz** — RA: 20.00601-2  
+
+---
+
+## 🔗 Links
+
+📘 [Notebook no Google Colab](https://colab.research.google.com/drive/19ghqgaJOrO7jR74WBzTw3sE_6FPe_emz?usp=sharing)  
+🌐 [Datafólio Online](https://vini-urias.github.io/steam-reviews-nlp/)  
+💾 [Repositório GitHub](https://github.com/Vini-Urias/steam-reviews-nlp)
